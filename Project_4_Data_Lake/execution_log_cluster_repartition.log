@@ -1,0 +1,168 @@
+Set AWS_ACCESS_KEY_ID =
+Set AWS_SECRET_ACCESS_KEY =
+Started main(): 2020-09-20 10:41:26.158632
+Started create_spark_session(): 2020-09-20 10:41:26.158658
+20/09/20 10:41:26 INFO SparkContext: Running Spark version 2.4.5-amzn-0
+20/09/20 10:41:26 INFO SparkContext: Submitted application: etl pipeline for project 4 - Data Lake
+20/09/20 10:41:26 INFO SecurityManager: Changing view acls to: hadoop
+20/09/20 10:41:26 INFO SecurityManager: Changing modify acls to: hadoop
+20/09/20 10:41:26 INFO SecurityManager: Changing view acls groups to: 
+20/09/20 10:41:26 INFO SecurityManager: Changing modify acls groups to: 
+20/09/20 10:41:26 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hadoop); groups with view permissions: Set(); users  with modify permissions: Set(hadoop); groups with modify permissions: Set()
+20/09/20 10:41:26 INFO Utils: Successfully started service 'sparkDriver' on port 38853.
+20/09/20 10:41:26 INFO SparkEnv: Registering MapOutputTracker
+20/09/20 10:41:26 INFO SparkEnv: Registering BlockManagerMaster
+20/09/20 10:41:26 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+20/09/20 10:41:26 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+20/09/20 10:41:26 INFO DiskBlockManager: Created local directory at /mnt/tmp/blockmgr-1f408ba4-ae43-4a79-93ea-c12deb4b96fb
+20/09/20 10:41:26 INFO MemoryStore: MemoryStore started with capacity 1028.8 MB
+20/09/20 10:41:26 INFO SparkEnv: Registering OutputCommitCoordinator
+20/09/20 10:41:26 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+20/09/20 10:41:27 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://ip-172-31-15-185.us-west-2.compute.internal:4040
+20/09/20 10:41:27 INFO Utils: Using initial executors = 50, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+20/09/20 10:41:27 INFO RMProxy: Connecting to ResourceManager at ip-172-31-15-185.us-west-2.compute.internal/172.31.15.185:8032
+20/09/20 10:41:27 INFO Client: Requesting a new application from cluster with 2 NodeManagers
+20/09/20 10:41:28 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (12288 MB per container)
+20/09/20 10:41:28 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+20/09/20 10:41:28 INFO Client: Setting up container launch context for our AM
+20/09/20 10:41:28 INFO Client: Setting up the launch environment for our AM container
+20/09/20 10:41:28 INFO Client: Preparing resources for our AM container
+20/09/20 10:41:28 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+20/09/20 10:41:29 INFO Client: Uploading resource file:/mnt/tmp/spark-339943ab-18ba-4ebb-af18-5ffa819f08e5/__spark_libs__7494319086071472615.zip -> hdfs://ip-172-31-15-185.us-west-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1600571763399_0011/__spark_libs__7494319086071472615.zip
+20/09/20 10:41:30 INFO Client: Uploading resource file:/usr/lib/spark/python/lib/pyspark.zip -> hdfs://ip-172-31-15-185.us-west-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1600571763399_0011/pyspark.zip
+20/09/20 10:41:30 INFO Client: Uploading resource file:/usr/lib/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://ip-172-31-15-185.us-west-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1600571763399_0011/py4j-0.10.7-src.zip
+20/09/20 10:41:30 INFO Client: Uploading resource file:/mnt/tmp/spark-339943ab-18ba-4ebb-af18-5ffa819f08e5/__spark_conf__933652362077728340.zip -> hdfs://ip-172-31-15-185.us-west-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1600571763399_0011/__spark_conf__.zip
+20/09/20 10:41:30 INFO SecurityManager: Changing view acls to: hadoop
+20/09/20 10:41:30 INFO SecurityManager: Changing modify acls to: hadoop
+20/09/20 10:41:30 INFO SecurityManager: Changing view acls groups to: 
+20/09/20 10:41:30 INFO SecurityManager: Changing modify acls groups to: 
+20/09/20 10:41:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hadoop); groups with view permissions: Set(); users  with modify permissions: Set(hadoop); groups with modify permissions: Set()
+20/09/20 10:41:31 INFO Client: Submitting application application_1600571763399_0011 to ResourceManager
+20/09/20 10:41:31 INFO YarnClientImpl: Submitted application application_1600571763399_0011
+20/09/20 10:41:31 INFO SchedulerExtensionServices: Starting Yarn extension services with app application_1600571763399_0011 and attemptId None
+20/09/20 10:41:32 INFO Client: Application report for application_1600571763399_0011 (state: ACCEPTED)
+20/09/20 10:41:32 INFO Client: 
+	 client token: N/A
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1600598491831
+	 final status: UNDEFINED
+	 tracking URL: http://ip-172-31-15-185.us-west-2.compute.internal:20888/proxy/application_1600571763399_0011/
+	 user: hadoop
+20/09/20 10:41:33 INFO Client: Application report for application_1600571763399_0011 (state: ACCEPTED)
+20/09/20 10:41:34 INFO Client: Application report for application_1600571763399_0011 (state: ACCEPTED)
+20/09/20 10:41:35 INFO Client: Application report for application_1600571763399_0011 (state: RUNNING)
+20/09/20 10:41:35 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 172.31.15.151
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1600598491831
+	 final status: UNDEFINED
+	 tracking URL: http://ip-172-31-15-185.us-west-2.compute.internal:20888/proxy/application_1600571763399_0011/
+	 user: hadoop
+20/09/20 10:41:35 INFO YarnClientSchedulerBackend: Application application_1600571763399_0011 has started running.
+20/09/20 10:41:35 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37661.
+20/09/20 10:41:35 INFO NettyBlockTransferService: Server created on ip-172-31-15-185.us-west-2.compute.internal:37661
+20/09/20 10:41:35 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+20/09/20 10:41:35 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ip-172-31-15-185.us-west-2.compute.internal, 37661, None)
+20/09/20 10:41:35 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-15-185.us-west-2.compute.internal:37661 with 1028.8 MB RAM, BlockManagerId(driver, ip-172-31-15-185.us-west-2.compute.internal, 37661, None)
+20/09/20 10:41:35 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ip-172-31-15-185.us-west-2.compute.internal, 37661, None)
+20/09/20 10:41:35 INFO BlockManager: external shuffle service port = 7337
+20/09/20 10:41:35 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ip-172-31-15-185.us-west-2.compute.internal, 37661, None)
+20/09/20 10:41:35 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> ip-172-31-15-185.us-west-2.compute.internal, PROXY_URI_BASES -> http://ip-172-31-15-185.us-west-2.compute.internal:20888/proxy/application_1600571763399_0011), /proxy/application_1600571763399_0011
+20/09/20 10:41:36 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+20/09/20 10:41:36 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+20/09/20 10:41:36 INFO EventLoggingListener: Logging events to hdfs:/var/log/spark/apps/application_1600571763399_0011
+20/09/20 10:41:36 INFO Utils: Using initial executors = 50, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+20/09/20 10:41:36 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+20/09/20 10:41:36 INFO SharedState: loading hive config file: file:/etc/spark/conf.dist/hive-site.xml
+20/09/20 10:41:36 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('hdfs:///user/spark/warehouse').
+20/09/20 10:41:36 INFO SharedState: Warehouse path is 'hdfs:///user/spark/warehouse'.
+20/09/20 10:41:36 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL.
+20/09/20 10:41:36 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/json.
+20/09/20 10:41:36 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/execution.
+20/09/20 10:41:36 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/execution/json.
+20/09/20 10:41:36 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /static/sql.
+20/09/20 10:41:37 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+
+--------------------------------------
+Method: Data_Lake/etl.py/create_spark_session()
+Total : Start: 2020-09-20 10:41:26
+Total : End: 2020-09-20 10:41:37
+Total : Duration: 0:00:10.885733
+--------------------------------------
+Started process_song_data(): 2020-09-20 10:41:37.044911
+Started write_parquet_file(df_d_songs): 2020-09-20 10:42:50.745642
+
+--------------------------------------
+Method: Data_Lake/etl.py/write_parquet_file(df_d_songs)
+Total : Start: 2020-09-20 10:42:50
+Total : End: 2020-09-20 12:14:04
+Total : Duration: 1:31:14.034449
+--------------------------------------
+Started write_parquet_file(df_d_artists): 2020-09-20 12:14:04.845956
+
+--------------------------------------
+Method: Data_Lake/etl.py/write_parquet_file(df_d_artists)
+Total : Start: 2020-09-20 12:14:04
+Total : End: 2020-09-20 12:15:47
+Total : Duration: 0:01:43.123164
+--------------------------------------
+
+--------------------------------------
+Method: Data_Lake/etl.py/process_song_data()
+Total : Start: 2020-09-20 10:41:37
+Total : End: 2020-09-20 12:15:47
+Total : Duration: 1:34:10.924327
+--------------------------------------
+Started process_log_data(): 2020-09-20 12:15:47.969296
+Started write_parquet_file(df_d_time): 2020-09-20 12:15:48.931949
+
+--------------------------------------
+Method: Data_Lake/etl.py/write_parquet_file(df_d_time)
+Total : Start: 2020-09-20 12:15:48
+Total : End: 2020-09-20 12:15:53
+Total : Duration: 0:00:04.991235
+--------------------------------------
+Started write_parquet_file(df_d_users): 2020-09-20 12:15:54.442707
+
+--------------------------------------
+Method: Data_Lake/etl.py/write_parquet_file(df_d_users)
+Total : Start: 2020-09-20 12:15:54
+Total : End: 2020-09-20 12:15:59
+Total : Duration: 0:00:05.390024
+--------------------------------------
+
+--------------------------------------
+Method: Data_Lake/etl.py/process_log_data()
+Total : Start: 2020-09-20 12:15:47
+Total : End: 2020-09-20 12:15:59
+Total : Duration: 0:00:11.863551
+--------------------------------------
+Started process_songplays_table(): 2020-09-20 12:15:59.832909
+Started write_parquet_file(df_f_songplays): 2020-09-20 12:16:00.055937
+
+--------------------------------------
+Method: Data_Lake/etl.py/write_parquet_file(df_f_songplays)
+Total : Start: 2020-09-20 12:16:00
+Total : End: 2020-09-20 12:17:20
+Total : Duration: 0:01:20.545298
+--------------------------------------
+
+--------------------------------------
+Method: Data_Lake/etl.py/process_songplays_table()
+Total : Start: 2020-09-20 12:15:59
+Total : End: 2020-09-20 12:17:20
+Total : Duration: 0:01:20.768440
+--------------------------------------
+
+--------------------------------------
+Method: Data_Lake/etl.py/main()
+Total : Start: 2020-09-20 10:41:26
+Total : End: 2020-09-20 12:17:20
+Total : Duration: 1:35:54.442802
+--------------------------------------
