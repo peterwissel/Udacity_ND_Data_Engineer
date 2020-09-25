@@ -1,0 +1,82 @@
+Set AWS_ACCESS_KEY_ID =
+Set AWS_SECRET_ACCESS_KEY =
+Started main(): 2020-09-15 22:07:46.749058
+Started create_spark_session(): 2020-09-15 22:07:46.749095
+
+--------------------------------------
+Method: Data_Lake/etl.py/create_spark_session()
+Total : Start: 2020-09-15 22:07:46
+Total : End: 2020-09-15 22:07:52
+Total : Duration: 0:00:05.355905
+--------------------------------------
+Started process_song_data(): 2020-09-15 22:07:52.105253
+Started write_parquet_file(df_d_songs): 2020-09-15 22:07:54.722258
+
+--------------------------------------
+Method: Data_Lake/etl.py/write_parquet_file(df_d_songs)
+Total : Start: 2020-09-15 22:07:54
+Total : End: 2020-09-15 22:07:58
+Total : Duration: 0:00:04.215445
+--------------------------------------
+Started write_parquet_file(df_d_artists): 2020-09-15 22:07:58.990275
+
+--------------------------------------
+Method: Data_Lake/etl.py/write_parquet_file(df_d_artists)
+Total : Start: 2020-09-15 22:07:58
+Total : End: 2020-09-15 22:07:59
+Total : Duration: 0:00:00.263540
+--------------------------------------
+
+--------------------------------------
+Method: Data_Lake/etl.py/process_song_data()
+Total : Start: 2020-09-15 22:07:52
+Total : End: 2020-09-15 22:07:59
+Total : Duration: 0:00:07.148606
+--------------------------------------
+Started process_log_data(): 2020-09-15 22:07:59.253880
+Started write_parquet_file(df_d_users): 2020-09-15 22:07:59.424951
+
+--------------------------------------
+Method: Data_Lake/etl.py/write_parquet_file(df_d_users)
+Total : Start: 2020-09-15 22:07:59
+Total : End: 2020-09-15 22:08:03
+Total : Duration: 0:00:03.914013
+--------------------------------------
+Started write_parquet_file(df_d_time): 2020-09-15 22:08:03.584501
+
+--------------------------------------
+Method: Data_Lake/etl.py/write_parquet_file(df_d_time)
+Total : Start: 2020-09-15 22:08:03
+Total : End: 2020-09-15 22:08:07
+Total : Duration: 0:00:03.428213
+--------------------------------------
+
+--------------------------------------
+Method: Data_Lake/etl.py/process_log_data()
+Total : Start: 2020-09-15 22:07:59
+Total : End: 2020-09-15 22:08:07
+Total : Duration: 0:00:07.758892
+--------------------------------------
+Started process_songplays_table(): 2020-09-15 22:08:07.012792
+Started write_parquet_file(df_f_songplays): 2020-09-15 22:08:07.183259
+
+--------------------------------------
+Method: Data_Lake/etl.py/write_parquet_file(df_f_songplays)
+Total : Start: 2020-09-15 22:08:07
+Total : End: 2020-09-15 22:08:08
+Total : Duration: 0:00:00.854768
+--------------------------------------
+
+--------------------------------------
+Method: Data_Lake/etl.py/process_songplays_table()
+Total : Start: 2020-09-15 22:08:07
+Total : End: 2020-09-15 22:08:08
+Total : Duration: 0:00:01.025294
+--------------------------------------
+
+--------------------------------------
+Method: Data_Lake/etl.py/main()
+Total : Start: 2020-09-15 22:07:46
+Total : End: 2020-09-15 22:08:08
+Total : Duration: 0:00:21.289062
+--------------------------------------

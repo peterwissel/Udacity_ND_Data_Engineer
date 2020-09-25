@@ -1,0 +1,88 @@
+1. Create a Key-Pair in IAM console (Web-UI)
+
+2. copy generated ssh key to ~/.ssh folder
+> cp project4DataLake.pem ~/.ssh/project4DataLake.pem
+> chmod 400 project4DataLake.pem
+
+3. create EMR instance
+
+> aws emr create-cluster --applications Name=Spark Name=Zeppelin --ec2-attributes '{"KeyName":"project4DataLake","InstanceProfile":"EMR_EC2_DefaultRole","SubnetId":"subnet-5ebb6603","EmrManagedSlaveSecurityGroup":"sg-0ff53571922adaecb","EmrManagedMasterSecurityGroup":"sg-00c1dfd33e1e8c9ce"}' --service-role EMR_DefaultRole --enable-debugging --release-label emr-5.30.1 --log-uri 's3n://aws-logs-563756791703-us-west-2/elasticmapreduce/' --name 'project4DataLakeCluster' --instance-groups '[{"InstanceCount":2,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"CORE","InstanceType":"m5.xlarge","Name":"Core Instance Group"},{"InstanceCount":1,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"MASTER","InstanceType":"m5.xlarge","Name":"Master Instance Group"}]' --configurations '[{"Classification":"spark","Properties":{}}]' --scale-down-behavior TERMINATE_AT_TASK_COMPLETION --region us-west-2
+
+4. Grant SSH access to ElasticMapReduce-master
+Type 					: SSH
+Protocol				: TCP
+Port range				: 22
+Source					: 0.0.0.0/0 (accept connection from every incoming IP on port 22)
+Description - optional	: SSH to master node from every outstanding node
+
+5. List available clusters
+> aws emr list-clusters
+
+output: 
+
+ "Clusters": [
+        {
+            "Id": "j-EXAMPLEID",
+            "Name": "project4DataLakeCluster",
+            "Status": {
+                "State": "WAITING",
+                "StateChangeReason": {
+                    "Message": "Cluster ready after last step completed."
+                },
+
+
+
+6. connect to EMR instance (not necessary - only for connection testing)
+> aws emr ssh --cluster-id j-EXAMPLEID --key-pair-file ~/.ssh/project4DataLake.pem
+OR
+> ssh -i ~/.ssh/project4DataLake.pem hadoop@ec2-54-186-68-173.us-west-2.compute.amazonaws.com
+
+
+7. set up dynamic port forwarding
+> aws emr socks --cluster-id j-EXAMPLEID --key-pair-file ~/.ssh/project4DataLake.pem
+OR
+> ssh -i ~/.ssh/project4DataLake.pem hadoop@ec2-54-186-68-173.us-west-2.compute.amazonaws.com -ND 8157
+
+
+8. Enable Web-Access to ElasticMapReduce-master-node
+- On the EMR-Summary page click on the right hand side "Enable an SSH Connection". Walk thru all steps
+-- Configure a proxy management tool (FoxyProxy Standard) --> Install it via Add-Ons page
+-- Create Settings XML --> foxyproxy-settings.xml 
+-- Import Settings within FoxProxy (Options - Import Settings - Import Settings from FoxyProxy 4.x and earlier --> foxyproxy-settings.xml)
+-- activate the profile on the Add-On-Icon (choose emr-socks-proxy)
+
+- Check port forwarding on the EMR-Console
+-- choose current cluster
+-- Tab: "Application user interfaces" --> The status for "On-cluster application user interfaces" should be "Available"
+
+9. Upload your code for execution to EMR-Cluster node
+- open a new terminal session (local)
+
+- copy code for execution to S3 bucket
+> aws s3 cp etl.py s3://project-4-data-lake/
+> aws s3 cp dl.cfg s3://project-4-data-lake/
+
+- login to Cluster node
+> aws emr ssh --cluster-id j-EXAMPLEID --key-pair-file ~/.ssh/project4DataLake.pem
+
+- copy code for execution from S3 to cluster node
+> aws s3 cp s3://project-4-data-lake/etl.py etl.py
+> aws s3 cp s3://project-4-data-lake/dl.cfg dl.cfg
+
+10. execute etl.py script 
+- execute spark-submit command and write all output to log file
+> spark-submit etl.py 2>&1 | tee execution_log_cluster.log
+
+11. sit back, relax and enjoy the show!
+- if it is too boring, check the current status
+-- go to EMR Web-UI - "Application user interfaces" - Application "Resource Manager (:8080)" 
+-- In Resource Manager (hadoop logo) --> Check State = RUNNING --> click on "Tracking UI" - ApplicationMaster
+-- In new window - check active jobs
+
+12. Optional action
+- copy the execution log back to your local machine
+> aws s3 cp execution_log_cluster.log s3://project-4-data-lake/
+> aws s3 cp s3://project-4-data-lake/execution_log_cluster.log execution_log_cluster.log
+
+12. terminate cluster !!!
+
