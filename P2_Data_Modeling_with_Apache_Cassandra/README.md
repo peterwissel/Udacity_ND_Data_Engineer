@@ -9,9 +9,9 @@ music streaming app. The analysis team is particularly interested in understandi
 Currently, there is no easy way to query the data to generate the results, since the data reside in a directory of CSV 
 files on user activity on the app.
 
-They'd like a data engineer to create an Apache Cassandra database which can create queries on song play data to answer 
-the questions, and wish to bring you on the project. Your role is to create a database for this analysis. You'll be able 
-to test your database by running queries given to you by the analytics team from Sparkify to create the results.
+They'd like a data engineer (me) to create an Apache Cassandra database which can create queries on song play data to 
+answer the questions, and wish to bring me on the project. My role is to create a database for this analysis. I'll be able 
+to test my database by running queries given to me by the analytics team from Sparkify to create the results.
 
 # Project Overview
 
