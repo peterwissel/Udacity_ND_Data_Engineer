@@ -33,15 +33,15 @@ are examples of filepaths to two files in the dataset:
 
 # Project Template
 
-To get started with the project, go to the workspace on the next page, where you'll find the project template (a Jupyter 
-notebook file). You can work on your project and submit your work through this workspace.
+To get started with the project, go to the workspace on the next page, where I'll find the project template (a Jupyter 
+notebook file). I can work on my project and submit my work through this workspace.
 
 The project template includes one Jupyter Notebook file, in which:
 
-- you will process the `event_datafile_new.csv` dataset to create a denormalized dataset
-- you will model the data tables keeping in mind the queries you need to run
-- you have been provided queries that you will need to model your data tables for
-- you will load the data into tables you create in Apache Cassandra and run your queries
+- I will process the `event_datafile_new.csv` dataset to create a denormalized dataset
+- I will model the data tables keeping in mind the queries I need to run
+- I have been provided queries that I will need to model my data tables for
+- I will load the data into tables I create in Apache Cassandra and run my queries
 
 # Project Steps
 
