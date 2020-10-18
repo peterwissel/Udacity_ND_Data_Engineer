@@ -45,7 +45,7 @@ The project template includes one Jupyter Notebook file, in which:
 
 # Project Steps
 
-Below are steps you can follow to complete each component of this project.
+Below are steps I can follow to complete each component of this project.
 
 ## Modeling your NoSQL database or Apache Cassandra database
 
