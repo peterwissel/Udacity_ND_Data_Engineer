@@ -30,16 +30,16 @@ default_args = {
     'retry_delay': timedelta(minutes=5),
     'email_on_retry': False,
     # If this default value is not overridden the data would only be appended to the stage tables.
-    'operation_mode': 'append_only'
+    'operation_mode': 'append_only',
+    'catchup': False
 }
 
 # current DAG with it's configuration
 dag = DAG('udac_project_data_pipeline_dag_final',
           default_args=default_args,
           description='Load and transform data in Redshift with Airflow',
-          schedule_interval='@daily',
-          max_active_runs=1,
-          catchup=False
+          schedule_interval='@hourly',
+          max_active_runs=1
           )
 
 # Start of execution
