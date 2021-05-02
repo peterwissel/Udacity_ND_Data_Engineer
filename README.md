@@ -49,7 +49,7 @@ In this project, I continued my work on the music streaming company’s data inf
 set of data pipelines. I configured and scheduled data pipelines with Airflow and monitored and debugged production 
 pipelines.
 
-#### P6 - Data Engineering Capstone Project
+#### P8 - Data Engineering Capstone Project
 
 The purpose of the data engineering capstone project is to give me a chance to combine what I’ve learned throughout the 
 program. This project will be an important part of my portfolio that will help me achieve my data engineering-related 

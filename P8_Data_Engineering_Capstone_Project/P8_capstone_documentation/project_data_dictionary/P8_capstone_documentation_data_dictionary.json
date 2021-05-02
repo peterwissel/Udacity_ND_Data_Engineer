@@ -1,0 +1,618 @@
+{
+    "tables": {
+        "d_date_arrivals": {
+            "columns": {
+                "d_da_date": {
+                    "column_description": "Date when foreign persons arrive for immigration to the U.S.",
+                    "column_name": "d_da_date"
+                },
+                "d_da_day": {
+                    "column_description": "Day number of current date like 2016-01-01 --> 1",
+                    "column_name": "d_da_day"
+                },
+                "d_da_dayofweek": {
+                    "column_description": "Day of week as number like '6'",
+                    "column_name": "d_da_dayofweek"
+                },
+                "d_da_id": {
+                    "column_description": "PK of table d_date_arrivals",
+                    "column_name": "d_da_id"
+                },
+                "d_da_month": {
+                    "column_description": "Month of arrival like '1'",
+                    "column_name": "d_da_month"
+                },
+                "d_da_quarter": {
+                    "column_description": "Quarter of arrival like '1'",
+                    "column_name": "d_da_quarter"
+                },
+                "d_da_week": {
+                    "column_description": "Week of arrival like '53'",
+                    "column_name": "d_da_week"
+                },
+                "d_da_weekday": {
+                    "column_description": "Day of week like 'Friday'",
+                    "column_name": "d_da_weekday"
+                },
+                "d_da_weekday_short": {
+                    "column_description": "Day of week in short form like 'Fri'",
+                    "column_name": "d_da_weekday_short"
+                },
+                "d_da_year": {
+                    "column_description": "Year of arrival like '2020'",
+                    "column_name": "d_da_year"
+                },
+                "d_da_year_month": {
+                    "column_description": "Year and month of arrival like '2016/01'",
+                    "column_name": "d_da_year_month"
+                },
+                "d_da_year_quarter": {
+                    "column_description": "Year and quarter of arrival like '2016/1'",
+                    "column_name": "d_da_year_quarter"
+                }
+            },
+            "table_description": "Arrival date for foreign persons to immigrate to the U.S.?",
+            "table_name": "d_date_arrivals"
+        },
+        "d_date_departures": {
+            "columns": {
+                "d_dd_date": {
+                    "column_description": "Date when foreign persons arrive for immigration to the U.S.",
+                    "column_name": "d_dd_date"
+                },
+                "d_dd_day": {
+                    "column_description": "Day number of current date like 2016-01-01 --> 1",
+                    "column_name": "d_dd_day"
+                },
+                "d_dd_dayofweek": {
+                    "column_description": "Day of week as number like '6'",
+                    "column_name": "d_dd_dayofweek"
+                },
+                "d_dd_id": {
+                    "column_description": "PK of table d_date_arrivals",
+                    "column_name": "d_dd_id"
+                },
+                "d_dd_month": {
+                    "column_description": "Month of arrival like '1'",
+                    "column_name": "d_dd_month"
+                },
+                "d_dd_quarter": {
+                    "column_description": "Quarter of arrival like '1'",
+                    "column_name": "d_dd_quarter"
+                },
+                "d_dd_week": {
+                    "column_description": "Week of arrival like '53'",
+                    "column_name": "d_dd_week"
+                },
+                "d_dd_weekday": {
+                    "column_description": "Day of week like 'Friday'",
+                    "column_name": "d_dd_weekday"
+                },
+                "d_dd_weekday_short": {
+                    "column_description": "Day of week in short form like 'Fri'",
+                    "column_name": "d_dd_weekday_short"
+                },
+                "d_dd_year": {
+                    "column_description": "Year of arrival like '2020'",
+                    "column_name": "d_dd_year"
+                },
+                "d_dd_year_month": {
+                    "column_description": "Year and month of arrival like '2016/01'",
+                    "column_name": "d_dd_year_month"
+                },
+                "d_dd_year_quarter": {
+                    "column_description": "Year and quarter of arrival like '2016/1'",
+                    "column_name": "d_dd_year_quarter"
+                }
+            },
+            "table_description": "Arrival date for foreign persons to immigrate to the U.S.?",
+            "table_name": "d_date_departures"
+        },
+        "d_immigration_airports": {
+            "columns": {
+                "d_ia_airport_code": {
+                    "column_description": "Abbreviation code of Airport",
+                    "column_name": "d_ia_airport_code"
+                },
+                "d_ia_airport_name": {
+                    "column_description": "Name of Airport",
+                    "column_name": "d_ia_airport_name"
+                },
+                "d_ia_airport_state_code": {
+                    "column_description": "Abbreviation of state where Airport is located",
+                    "column_name": "d_ia_airport_state_code"
+                },
+                "d_ia_id": {
+                    "column_description": "PK of table d_immigration_airports",
+                    "column_name": "d_ia_id"
+                }
+            },
+            "table_description": "Airport name where foreign people arrive to the U.S.",
+            "table_name": "d_immigration_airports"
+        },
+        "d_immigration_countries": {
+            "columns": {
+                "d_ic_country_code": {
+                    "column_description": "Abbreviation of country code",
+                    "column_name": "d_ic_country_code"
+                },
+                "d_ic_country_name": {
+                    "column_description": "Name of country",
+                    "column_name": "d_ic_country_name"
+                },
+                "d_ic_id": {
+                    "column_description": "PK of table d_immigration_countries",
+                    "column_name": "d_ic_id"
+                }
+            },
+            "table_description": "Country where immigrants come from to the U.S.",
+            "table_name": "d_immigration_countries"
+        },
+        "d_state_destinations": {
+            "columns": {
+                "d_sd_age_median": {
+                    "column_description": "Median age of the population",
+                    "column_name": "d_sd_age_median"
+                },
+                "d_sd_foreign_born": {
+                    "column_description": "Average of the population born abroad",
+                    "column_name": "d_sd_foreign_born"
+                },
+                "d_sd_id": {
+                    "column_description": "PK of table d_state_destinations",
+                    "column_name": "d_sd_id"
+                },
+                "d_sd_population_female": {
+                    "column_description": "Average of female population",
+                    "column_name": "d_sd_population_female"
+                },
+                "d_sd_population_male": {
+                    "column_description": "Average of male population",
+                    "column_name": "d_sd_population_male"
+                },
+                "d_sd_population_total": {
+                    "column_description": "Average of population",
+                    "column_name": "d_sd_population_total"
+                },
+                "d_sd_state_code": {
+                    "column_description": "Abbreviation of State code",
+                    "column_name": "d_sd_state_code"
+                },
+                "d_sd_state_name": {
+                    "column_description": "Full name of State",
+                    "column_name": "d_sd_state_name"
+                }
+            },
+            "table_description": "To which State immigrants want to continue their travel after initial arrival in the U.S.",
+            "table_name": "d_state_destinations"
+        },
+        "f_i94_immigrations": {
+            "columns": {
+                "d_da_id": {
+                    "column_description": "FK of table d_date_arrivals",
+                    "column_name": "d_da_id"
+                },
+                "d_dd_id": {
+                    "column_description": "FK of table d_date_departures",
+                    "column_name": "d_dd_id"
+                },
+                "d_ia_id": {
+                    "column_description": "FK of table d_immigration_airports",
+                    "column_name": "d_ia_id"
+                },
+                "d_ic_id": {
+                    "column_description": "FK of table d_immigration_countries",
+                    "column_name": "d_ic_id"
+                },
+                "d_sd_id": {
+                    "column_description": "FK of table d_state_destinations",
+                    "column_name": "d_sd_id"
+                },
+                "f_i94_addr": {
+                    "column_description": "Location State where the immigrants want travel to",
+                    "column_name": "f_i94_addr"
+                },
+                "f_i94_arrdate_iso": {
+                    "column_description": "Arrival date in the U.S.",
+                    "column_name": "f_i94_arrdate_iso"
+                },
+                "f_i94_cit": {
+                    "column_description": "Country where the immigrants come from",
+                    "column_name": "f_i94_cit"
+                },
+                "f_i94_count": {
+                    "column_description": "Counter (1). This value is used for calculation purposes",
+                    "column_name": "f_i94_count"
+                },
+                "f_i94_depdate_iso": {
+                    "column_description": "Departure date from U.S.",
+                    "column_name": "f_i94_depdate_iso"
+                },
+                "f_i94_dtadfile": {
+                    "column_description": "Date added to I-94 Files",
+                    "column_name": "f_i94_dtadfile"
+                },
+                "f_i94_id": {
+                    "column_description": "PK of table f_i94_immigrations",
+                    "column_name": "f_i94_id"
+                },
+                "f_i94_matflag": {
+                    "column_description": "Match flag - Match of arrival and departure records",
+                    "column_name": "f_i94_matflag"
+                },
+                "f_i94_month": {
+                    "column_description": "Month when record added to I-94 Files",
+                    "column_name": "f_i94_month"
+                },
+                "f_i94_port": {
+                    "column_description": "Arrival airport from immigrants to the U.S.",
+                    "column_name": "f_i94_port"
+                },
+                "f_i94_port_state_code": {
+                    "column_description": "State code of state where immigration airport (I94PORT) is located",
+                    "column_name": "f_i94_port_state_code"
+                },
+                "f_i94_year": {
+                    "column_description": "4 digit year when record added to I-94 Files",
+                    "column_name": "f_i94_year"
+                }
+            },
+            "table_description": "I-94 Immigration data to the U.S.",
+            "table_name": "f_i94_immigrations"
+        },
+        "i94_data_raw_parquet": {
+            "columns": {
+                "admnum": {
+                    "column_description": "not set",
+                    "column_name": "admnum"
+                },
+                "airline": {
+                    "column_description": "not set",
+                    "column_name": "airline"
+                },
+                "arrdate": {
+                    "column_description": "not set",
+                    "column_name": "arrdate"
+                },
+                "biryear": {
+                    "column_description": "not set",
+                    "column_name": "biryear"
+                },
+                "cicid": {
+                    "column_description": "not set",
+                    "column_name": "cicid"
+                },
+                "count": {
+                    "column_description": "not set",
+                    "column_name": "count"
+                },
+                "depdate": {
+                    "column_description": "not set",
+                    "column_name": "depdate"
+                },
+                "dtaddto": {
+                    "column_description": "not set",
+                    "column_name": "dtaddto"
+                },
+                "dtadfile": {
+                    "column_description": "not set",
+                    "column_name": "dtadfile"
+                },
+                "entdepa": {
+                    "column_description": "not set",
+                    "column_name": "entdepa"
+                },
+                "entdepd": {
+                    "column_description": "not set",
+                    "column_name": "entdepd"
+                },
+                "entdepu": {
+                    "column_description": "not set",
+                    "column_name": "entdepu"
+                },
+                "fltno": {
+                    "column_description": "not set",
+                    "column_name": "fltno"
+                },
+                "gender": {
+                    "column_description": "not set",
+                    "column_name": "gender"
+                },
+                "i94addr": {
+                    "column_description": "not set",
+                    "column_name": "i94addr"
+                },
+                "i94bir": {
+                    "column_description": "not set",
+                    "column_name": "i94bir"
+                },
+                "i94cit": {
+                    "column_description": "not set",
+                    "column_name": "i94cit"
+                },
+                "i94mode": {
+                    "column_description": "not set",
+                    "column_name": "i94mode"
+                },
+                "i94mon": {
+                    "column_description": "not set",
+                    "column_name": "i94mon"
+                },
+                "i94port": {
+                    "column_description": "not set",
+                    "column_name": "i94port"
+                },
+                "i94res": {
+                    "column_description": "not set",
+                    "column_name": "i94res"
+                },
+                "i94visa": {
+                    "column_description": "not set",
+                    "column_name": "i94visa"
+                },
+                "i94yr": {
+                    "column_description": "not set",
+                    "column_name": "i94yr"
+                },
+                "insnum": {
+                    "column_description": "not set",
+                    "column_name": "insnum"
+                },
+                "matflag": {
+                    "column_description": "not set",
+                    "column_name": "matflag"
+                },
+                "occup": {
+                    "column_description": "not set",
+                    "column_name": "occup"
+                },
+                "visapost": {
+                    "column_description": "not set",
+                    "column_name": "visapost"
+                },
+                "visatype": {
+                    "column_description": "not set",
+                    "column_name": "visatype"
+                }
+            },
+            "table_description": "not set",
+            "table_name": "i94_data_raw_parquet"
+        },
+        "st_date_arrivals": {
+            "columns": {
+                "st_da_date": {
+                    "column_description": "not set",
+                    "column_name": "st_da_date"
+                },
+                "st_da_day": {
+                    "column_description": "not set",
+                    "column_name": "st_da_day"
+                },
+                "st_da_dayofweek": {
+                    "column_description": "not set",
+                    "column_name": "st_da_dayofweek"
+                },
+                "st_da_id": {
+                    "column_description": "not set",
+                    "column_name": "st_da_id"
+                },
+                "st_da_month": {
+                    "column_description": "not set",
+                    "column_name": "st_da_month"
+                },
+                "st_da_quarter": {
+                    "column_description": "not set",
+                    "column_name": "st_da_quarter"
+                },
+                "st_da_week": {
+                    "column_description": "not set",
+                    "column_name": "st_da_week"
+                },
+                "st_da_weekday": {
+                    "column_description": "not set",
+                    "column_name": "st_da_weekday"
+                },
+                "st_da_weekday_short": {
+                    "column_description": "not set",
+                    "column_name": "st_da_weekday_short"
+                },
+                "st_da_year": {
+                    "column_description": "not set",
+                    "column_name": "st_da_year"
+                },
+                "st_da_year_month": {
+                    "column_description": "not set",
+                    "column_name": "st_da_year_month"
+                },
+                "st_da_year_quarter": {
+                    "column_description": "not set",
+                    "column_name": "st_da_year_quarter"
+                }
+            },
+            "table_description": "not set",
+            "table_name": "st_date_arrivals"
+        },
+        "st_date_departures": {
+            "columns": {
+                "st_dd_date": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_date"
+                },
+                "st_dd_day": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_day"
+                },
+                "st_dd_dayofweek": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_dayofweek"
+                },
+                "st_dd_id": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_id"
+                },
+                "st_dd_month": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_month"
+                },
+                "st_dd_quarter": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_quarter"
+                },
+                "st_dd_week": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_week"
+                },
+                "st_dd_weekday": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_weekday"
+                },
+                "st_dd_weekday_short": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_weekday_short"
+                },
+                "st_dd_year": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_year"
+                },
+                "st_dd_year_month": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_year_month"
+                },
+                "st_dd_year_quarter": {
+                    "column_description": "not set",
+                    "column_name": "st_dd_year_quarter"
+                }
+            },
+            "table_description": "not set",
+            "table_name": "st_date_departures"
+        },
+        "st_i94_immigrations": {
+            "columns": {
+                "st_i94_addr": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_addr"
+                },
+                "st_i94_arrdate": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_arrdate"
+                },
+                "st_i94_arrdate_iso": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_arrdate_iso"
+                },
+                "st_i94_cit": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_cit"
+                },
+                "st_i94_count": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_count"
+                },
+                "st_i94_depdate": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_depdate"
+                },
+                "st_i94_depdate_iso": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_depdate_iso"
+                },
+                "st_i94_dtadfile": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_dtadfile"
+                },
+                "st_i94_id": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_id"
+                },
+                "st_i94_matflag": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_matflag"
+                },
+                "st_i94_month": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_month"
+                },
+                "st_i94_port": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_port"
+                },
+                "st_i94_port_state_code": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_port_state_code"
+                },
+                "st_i94_year": {
+                    "column_description": "not set",
+                    "column_name": "st_i94_year"
+                }
+            },
+            "table_description": "not set",
+            "table_name": "st_i94_immigrations"
+        },
+        "st_immigration_airports": {
+            "columns": {
+                "st_ia_airport_code": {
+                    "column_description": "not set",
+                    "column_name": "st_ia_airport_code"
+                },
+                "st_ia_airport_name": {
+                    "column_description": "not set",
+                    "column_name": "st_ia_airport_name"
+                },
+                "st_ia_airport_state_code": {
+                    "column_description": "not set",
+                    "column_name": "st_ia_airport_state_code"
+                }
+            },
+            "table_description": "not set",
+            "table_name": "st_immigration_airports"
+        },
+        "st_immigration_countries": {
+            "columns": {
+                "st_ic_country_code": {
+                    "column_description": "not set",
+                    "column_name": "st_ic_country_code"
+                },
+                "st_ic_country_name": {
+                    "column_description": "not set",
+                    "column_name": "st_ic_country_name"
+                }
+            },
+            "table_description": "not set",
+            "table_name": "st_immigration_countries"
+        },
+        "st_state_destinations": {
+            "columns": {
+                "st_sd_age_median": {
+                    "column_description": "not set",
+                    "column_name": "st_sd_age_median"
+                },
+                "st_sd_foreign_born": {
+                    "column_description": "not set",
+                    "column_name": "st_sd_foreign_born"
+                },
+                "st_sd_population_female": {
+                    "column_description": "not set",
+                    "column_name": "st_sd_population_female"
+                },
+                "st_sd_population_male": {
+                    "column_description": "not set",
+                    "column_name": "st_sd_population_male"
+                },
+                "st_sd_population_total": {
+                    "column_description": "not set",
+                    "column_name": "st_sd_population_total"
+                },
+                "st_sd_state_code": {
+                    "column_description": "not set",
+                    "column_name": "st_sd_state_code"
+                },
+                "st_sd_state_name": {
+                    "column_description": "not set",
+                    "column_name": "st_sd_state_name"
+                }
+            },
+            "table_description": "not set",
+            "table_name": "st_state_destinations"
+        }
+    }
+}
