@@ -53,8 +53,8 @@ pipelines.
 
 The purpose of the data engineering capstone project is to give me a chance to combine what I’ve learned throughout the 
 program. This project will be an important part of my portfolio that will help me achieve my data engineering-related 
-career goals.In this project, **I’ll define** the scope of the project and the data I’ll be working with. We’ll provide 
+career goals.In this project, **I’ll define** the scope of the project and the data I’ll be working with. I’ll provide 
 guidelines, suggestions, tips, and resources to help me to be successful, but my project will be unique to me. 
-I’ll gather data from several different data sources ;transform, combine, and summarize it; and create a clean database 
+I’ll gather data from several different data sources, transform, combine, and summarize it and create a clean database 
 for others to analyze.
 
