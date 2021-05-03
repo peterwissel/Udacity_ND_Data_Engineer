@@ -1,0 +1,5 @@
+/* I94MODE - There are missing values as well as not reported (9) */
+	1 = 'Air'
+	2 = 'Sea'
+	3 = 'Land'
+	9 = 'Not reported'

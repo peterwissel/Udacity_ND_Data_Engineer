@@ -1,0 +1,312 @@
+Started main(): 2021-05-02 14:07:24.974646
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_jan16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_feb16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_mar16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_apr16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_may16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_jun16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_jul16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_aug16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_sep16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_oct16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_nov16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+../P8_capstone_resource_files/immigration_data/18-83510-I94-Data-2016/i94_dec16_sub.sas7bdat loaded
+../P8_capstone_resource_files/parquet_raw/i94_data_raw_parquet written
+40790529 entries inside data frame.
+Data conversion finished
+
+Project Question 1 (3.1.1._4.1.1.): From which country do immigrants come to the U.S. and how many? ==> Processing started ...
+
+Dataframe st_immigration_airports created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_stage/st_immigration_airports
+Dataframe st_immigration_airports persisted.
+Dataframe i94_data_raw_parquet loaded.
+Content of table df_st_i94_immigrations : 12228839
+Dataframe st_i94_immigrations created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_stage/st_i94_immigrations
+Dataframe st_i94_immigrations persisted.
+Dataframe st_state_destinations created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_stage/st_state_destinations
+Dataframe st_state_destinations persisted.
+Dataframe d_state_destinations created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_star/d_state_destinations
+Dataframe d_state_destinations persisted.
+Dataframe f_i94_immigrations created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_star/f_i94_immigrations
+Dataframe f_i94_immigrations persisted.
+Dataframe registered as TempView: f_i94_immigrations
+Dataframe st_immigration_countries created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_stage/st_immigration_countries
+Dataframe st_immigration_countries persisted.
+Dataframe d_immigration_countries created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_star/d_immigration_countries
+Dataframe d_immigration_countries persisted.
+Dataframe registered as TempView: d_immigration_countries
+
+Answer of 
+Project Question 1 (3.1.1._4.1.1.): From which country do immigrants come to the U.S. and how many?
+
++---------+---------------------------------------------------------+----------+---------------+
+|county_id|country                                                  |immigrants|Immigrants_rank|
++---------+---------------------------------------------------------+----------+---------------+
+|135      |UNITED KINGDOM                                           |815721    |1              |
+|245      |CHINA, PRC                                               |767992    |2              |
+|582      |MEXICO Air Sea, and Not Reported (I-94, no land arrivals)|684295    |3              |
+|213      |INDIA                                                    |544067    |4              |
+|209      |JAPAN                                                    |441132    |5              |
+|111      |FRANCE                                                   |408438    |6              |
+|689      |BRAZIL                                                   |387223    |7              |
+|438      |AUSTRALIA                                                |352852    |8              |
+|117      |ITALY                                                    |317084    |9              |
+|129      |SPAIN                                                    |281121    |10             |
+|691      |COLOMBIA                                                 |273025    |11             |
+|123      |NETHERLANDS                                              |241267    |12             |
+|687      |ARGENTINA                                                |172293    |13             |
+|116      |IRELAND                                                  |171100    |14             |
+|696      |VENEZUELA                                                |168950    |15             |
+|130      |SWEDEN                                                   |166236    |16             |
+|251      |ISRAEL                                                   |158934    |17             |
+|268      |TAIWAN                                                   |156938    |18             |
+|131      |SWITZERLAND                                              |151240    |19             |
+|260      |PHILIPPINES                                              |141748    |20             |
++---------+---------------------------------------------------------+----------+---------------+
+only showing top 20 rows
+
+folder created: ../P8_capstone_documentation/project_question_answers
+JSON data persisted successfully to file ../P8_capstone_documentation/project_question_answers/Project Question 1 (3.1.1._4.1.1.).json
+
+Project Question 2 (3.1.2._4.1.2.): At what airports do foreign persons arrive for immigration to the U.S.? ==> Processing started ...
+
+Dataframe st_immigration_airports loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe d_immigration_airports created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_star/d_immigration_airports
+Dataframe d_immigration_airports persisted.
+Dataframe registered as TempView: d_immigration_airports
+Dataframe f_i94_immigrations loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe registered as TempView: f_i94_immigrations
+
+Answer of 
+Project Question 2 (3.1.2._4.1.2.): At what airports do foreign persons arrive for immigration to the U.S.?
+
++------------+----------------+------------------+----------+------------------------+
+|airport_code|airport_name    |airport_state_code|immigrants|Immigration_airport_rank|
++------------+----------------+------------------+----------+------------------------+
+|NYC         |NEW YORK        |NY                |1669429   |1                       |
+|MIA         |MIAMI           |FL                |1139100   |2                       |
+|LOS         |LOS ANGELES     |CA                |1134611   |3                       |
+|CHI         |CHICAGO         |IL                |792628    |4                       |
+|NEW         |NEWARK/TETERBORO|NJ                |663630    |5                       |
+|SFR         |SAN FRANCISCO   |CA                |628438    |6                       |
+|HOU         |HOUSTON         |TX                |609343    |7                       |
+|ATL         |ATLANTA         |GA                |605856    |8                       |
+|WAS         |WASHINGTON      |DC                |570668    |9                       |
+|DAL         |DALLAS          |TX                |490050    |10                      |
+|BOS         |BOSTON          |MA                |382112    |11                      |
+|FTL         |FORT LAUDERDALE |FL                |337598    |12                      |
+|SEA         |SEATTLE         |WA                |272207    |13                      |
+|DET         |DETROIT         |MI                |262744    |14                      |
+|ORL         |ORLANDO         |FL                |257311    |15                      |
+|PHI         |PHILADELPHIA    |PA                |185469    |16                      |
+|LVG         |LAS VEGAS       |NV                |171358    |17                      |
+|HHW         |HONOLULU        |HI                |131980    |18                      |
+|CLT         |CHARLOTTE       |NC                |112025    |19                      |
+|SPM         |ST PAUL         |MN                |101986    |20                      |
++------------+----------------+------------------+----------+------------------------+
+only showing top 20 rows
+
+JSON data persisted successfully to file ../P8_capstone_documentation/project_question_answers/Project Question 2 (3.1.2._4.1.2.).json
+
+Project Question 3 (3.1.3._4.1.3.): At what times do foreign persons arrive for immigration to the U.S.? ==> Processing started ...
+
+Dataframe st_i94_immigrations loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe st_date_arrivals created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_stage/st_date_arrivals
+Dataframe st_date_arrivals persisted.
+Dataframe d_date_arrivals created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_star/d_date_arrivals
+Dataframe d_date_arrivals persisted.
+Dataframe registered as TempView: d_date_arrivals
+Dataframe st_i94_immigrations loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe st_date_departures created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_stage/st_date_departures
+Dataframe st_date_departures persisted.
+Dataframe d_date_departures created.
+data persisted successfully to folder ../P8_capstone_resource_files/parquet_star/d_date_departures
+Dataframe d_date_departures persisted.
+Dataframe registered as TempView: d_date_departures
+Dataframe f_i94_immigrations loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe registered as TempView: f_i94_immigrations
+
+Answer of 
+Project Question 3 (3.1.3._4.1.3.): At what times do foreign persons arrive for immigration to the U.S.?
+
++----------+----------+---------------+
+|Year_Month|Immigrants|Immigrants_rank|
++----------+----------+---------------+
+|2016/07   |1328974   |1              |
+|2016/08   |1160455   |2              |
+|2016/09   |1125245   |3              |
+|2016/06   |1080648   |4              |
+|2016/10   |1050757   |5              |
+|2016/04   |1042752   |6              |
+|2016/05   |1042120   |7              |
+|2016/12   |991505    |8              |
+|2016/03   |939031    |9              |
+|2016/11   |904804    |10             |
+|2016/01   |865969    |11             |
+|2016/02   |696579    |12             |
++----------+----------+---------------+
+
+JSON data persisted successfully to file ../P8_capstone_documentation/project_question_answers/Project Question 3 (3.1.3._4.1.3.).json
+
+Project Question 4 (3.1.4._4.1.4.): To which states in the U.S. do immigrants want to continue their travel after their initial arrival and what demographics can
+immigrants expect when they arrive in the destination state, such as average temperature, population numbers or population density? ==> Processing started ...
+
+Dataframe f_i94_immigrations loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe registered as TempView: f_i94_immigrations
+Dataframe d_state_destinations loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe registered as TempView: d_state_destinations
+
+Answer of 
+Project Question 4 (3.1.4._4.1.4.): To which states in the U.S. do immigrants want to continue their travel after their initial arrival and what demographics can
+immigrants expect when they arrive in the destination state, such as average temperature, population numbers or population density?
+
++-------------------------------+----------+-----------------+--------------------------+----------+---------------+-----------------+----------------+------------+
+|immigrants_continue_travel_rank|state_code|state_name       |immigrants_continue_travel|age_median|population_male|population_female|population_total|foreign_born|
++-------------------------------+----------+-----------------+--------------------------+----------+---------------+-----------------+----------------+------------+
+|1                              |CA        |California       |1643595                   |36.2      |90319          |92290            |182609          |54821       |
+|2                              |FL        |Florida          |1574311                   |39.5      |70602          |75919            |145523          |35340       |
+|3                              |NY        |New York         |1387808                   |35.6      |433755         |473689           |907445          |318275      |
+|4                              |99        |All Other Codes  |982830                    |0.0       |0              |0                |0               |0           |
+|5                              |TX        |Texas            |714372                    |33.4      |127700         |130738           |258439          |53106       |
+|6                              |MA        |Massachusetts    |438998                    |35.5      |70160          |74723            |144884          |37301       |
+|7                              |NJ        |New Jersey       |433331                    |35.3      |60053          |61543            |121596          |40837       |
+|8                              |IL        |Illinois         |406719                    |35.7      |120262         |127148           |247410          |50907       |
+|9                              |NV        |Nevada           |386045                    |36.1      |124293         |124677           |248971          |53481       |
+|10                             |WA        |Washington       |360872                    |35.3      |73270          |73794            |147065          |25938       |
+|11                             |GA        |Georgia          |266045                    |33.8      |74574          |80973            |155548          |13435       |
+|12                             |PA        |Pennsylvania     |251428                    |34.0      |167112         |181457           |348569          |43634       |
+|13                             |VA        |Virginia         |230215                    |34.4      |82891          |85939            |168830          |19232       |
+|14                             |MI        |Michigan         |222573                    |37.0      |66041          |71746            |137787          |15374       |
+|15                             |MD        |Maryland         |193001                    |36.4      |62795          |68417            |131212          |22979       |
+|16                             |NC        |N. Carolina      |177568                    |33.8      |104721         |113863           |218585          |27094       |
+|17                             |DC        |Dist. Of Columbia|175928                    |33.8      |319705         |352523           |672228          |95117       |
+|18                             |CO        |Colorado         |166799                    |35.8      |90913          |92565            |183479          |21101       |
+|19                             |HI        |Hawaii           |161629                    |41.4      |176807         |175959           |352766          |101312      |
+|20                             |OH        |Ohio             |161616                    |35.6      |119454         |127414           |246868          |17834       |
++-------------------------------+----------+-----------------+--------------------------+----------+---------------+-----------------+----------------+------------+
+only showing top 20 rows
+
+JSON data persisted successfully to file ../P8_capstone_documentation/project_question_answers/Project Question 4 (3.1.4._4.1.4.).json
+
+Data Quality Check(s):
+
+Table: st_immigration_airports
+DQ-Check result: There is no configuration entry for a Data Quality check!
+
+
+Table: i94_data_raw_parquet
+DQ-Check result: There is no configuration entry for a Data Quality check!
+
+
+Table: st_i94_immigrations
+DQ-Check result: There is no configuration entry for a Data Quality check!
+
+
+Table: st_state_destinations
+DQ-Check result: There is no configuration entry for a Data Quality check!
+
+
+Table: d_state_destinations
+Dataframe d_state_destinations loaded from already existing im memory dict 'staging_tables_available'.
+Null values in column: d_sd_id --> Result: 0
+DQ-Check result: OK
+
+Table: f_i94_immigrations
+Dataframe f_i94_immigrations loaded from already existing im memory dict 'staging_tables_available'.
+Null values in column: f_i94_id --> Result: 0
+Null values in column: d_ia_id --> Result: 0
+Null values in column: d_sd_id --> Result: 0
+Null values in column: d_da_id --> Result: 0
+Null values in column: d_dd_id --> Result: 0
+Null values in column: d_ic_id --> Result: 0
+DQ-Check result: OK
+
+Table: st_immigration_countries
+DQ-Check result: There is no configuration entry for a Data Quality check!
+
+
+Table: d_immigration_countries
+Dataframe d_immigration_countries loaded from already existing im memory dict 'staging_tables_available'.
+Null values in column: d_ic_id --> Result: 0
+DQ-Check result: OK
+
+Table: d_immigration_airports
+Dataframe d_immigration_airports loaded from already existing im memory dict 'staging_tables_available'.
+Null values in column: d_ia_id --> Result: 0
+DQ-Check result: OK
+
+Table: st_date_arrivals
+DQ-Check result: There is no configuration entry for a Data Quality check!
+
+
+Table: d_date_arrivals
+Dataframe d_date_arrivals loaded from already existing im memory dict 'staging_tables_available'.
+Null values in column: d_da_id --> Result: 0
+DQ-Check result: OK
+
+Table: st_date_departures
+DQ-Check result: There is no configuration entry for a Data Quality check!
+
+
+Table: d_date_departures
+Dataframe d_date_departures loaded from already existing im memory dict 'staging_tables_available'.
+Null values in column: d_dd_id --> Result: 0
+DQ-Check result: OK
+
+Result of Data Quality Checks:
++-----------------------+----------------------+-----------------+----------------+
+|dq_result_table_name   |dq_result_null_entries|dq_result_entries|dq_result_status|
++-----------------------+----------------------+-----------------+----------------+
+|d_state_destinations   |0                     |55               |OK              |
+|f_i94_immigrations     |0                     |12228839         |OK              |
+|d_immigration_countries|0                     |237              |OK              |
+|d_immigration_airports |0                     |660              |OK              |
+|d_date_arrivals        |0                     |366              |OK              |
+|d_date_departures      |0                     |531              |OK              |
++-----------------------+----------------------+-----------------+----------------+
+
+Data Dictionary creation started ...
+Dataframe st_immigration_airports loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe i94_data_raw_parquet loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe st_i94_immigrations loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe st_state_destinations loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe d_state_destinations loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe f_i94_immigrations loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe st_immigration_countries loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe d_immigration_countries loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe d_immigration_airports loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe st_date_arrivals loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe d_date_arrivals loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe st_date_departures loaded from already existing im memory dict 'staging_tables_available'.
+Dataframe d_date_departures loaded from already existing im memory dict 'staging_tables_available'.
+
+Data Dictionary created. File is located at: ../P8_capstone_documentation/10_P8_capstone_documentation_data_dictionary.json
+
+--------------------------------------
+Method: P8_Capstone_Project_Data_Preparation.py/main()
+Total : Start: 2021-05-02 14:07:24
+Total : End: 2021-05-02 14:39:46
+Total : Duration: 0:32:21.159441
+--------------------------------------
