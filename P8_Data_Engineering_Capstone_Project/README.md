@@ -38,7 +38,8 @@ The project works primarily with a dataset based on immigration data (I94) to th
 **Project decision**: Only usage of given i94 airport codes.
 
 ###### 3. `arrdate` / `depdate`:
-- `arrdate` and `depdate` are in SAS date format (String), whose epoch starts on 1960-01-01. This date values will be converted into DateFormat.
+- `arrdate` and `depdate` are in SAS date format (String), whose epoch starts on 1960-01-01. This date values will be 
+   converted into DateFormat.
 
 ###### 4. `i94addr`:
 - Null values in column `i94addr`
@@ -87,9 +88,9 @@ jupyter notebooks:
   ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_3.1.2_and_4.1.2.ipynb))
 * Step 3.1.3 and 4.1.3: Project Question 3 (PQ3) - At what times do foreign persons arrive for immigration to the U.S.? 
   ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_3.1.3_and_4.1.3.ipynb))
-* Step 3.1.4 and 4.1.4: Project Question 4 (PQ4) - To which states in the U.S. do immigrants want to continue their travel after their initial 
-  arrival and what demographics can immigrants expect when they arrive in the destination state, such as average 
-  temperature, population numbers or population density? 
+* Step 3.1.4 and 4.1.4: Project Question 4 (PQ4) - To which states in the U.S. do immigrants want to continue their 
+  travel after their initial arrival and what demographics can immigrants expect when they arrive in the destination 
+  state, such as average temperature, population numbers or population density? 
   ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_3.1.4_and_4.1.4.ipynb))
 * Step 4.2: Data quality checks 
   ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_4.2_data_quality_checks.ipynb))
@@ -186,19 +187,19 @@ Type to command line:
         * __The data was increased by 100x.__
             * Source data should be stored in Cloud storage like AWS S3
             * To process all data in parallel use clustered Spark nodes (AWS EMR)
-            * Storing the calculated data in a Star Model data structure within a cloud-based data warehouse (DWH) such as 
-              AWS Redshift, is possible. Optionally, it is also conceivable to store the Star Data Model as Parquet files in 
-              S3 cloud storage for further analysis. 
+            * Storing the calculated data in a Star Model data structure within a cloud-based data warehouse (DWH) such 
+              as AWS Redshift, is possible. Optionally, it is also conceivable to store the Star Data Model as Parquet 
+              files in S3 cloud storage for further analysis. 
             
         * __The data populates a dashboard that must be updated on a daily basis by 7am every day.__
-            * The I94 source data should be read in daily. This will reduce the amount of data per run. Note that not every
-              project dataset (e.g. US Cities Demographics or Airport Codes) needs to be loaded daily.
+            * The I94 source data should be read in daily. This will reduce the amount of data per run. Note that not 
+              every project dataset (e.g. US Cities Demographics or Airport Codes) needs to be loaded daily.
             * Apache Airflow could be used for the daily data loading procedure
     
         * __The database needed to be accessed by 100+ people.__
-            * Output data should be stored in a cloud DWH such as AWS Redshift to be "always available".  In addition, there
-              is the possibility that the data in the Star data model is made available to the user for self-selection through
-              self-service BI. Tools such as QlikSense or similar can be used here.
+            * Output data should be stored in a cloud DWH such as AWS Redshift to be "always available".  In addition, 
+              there is the possibility that the data in the Star data model is made available to the user for 
+              self-selection through self-service BI. Tools such as QlikSense or similar can be used here.
 
 ## Summary
 Project-Capstone provides tools to automatically process, clean, analyze US I94 Immigration data in a flexible way and
