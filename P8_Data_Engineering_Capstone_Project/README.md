@@ -100,15 +100,28 @@ jupyter notebooks:
 
 
 ### Data Dictionary
-A data dictionary describes and explains all available tables and fields. This file can be found here:
-[09_P8_capstone_documentation_data_dictionary.json](P8_capstone_documentation/10_P8_capstone_documentation_data_dictionary.json)
+A data dictionary describes and explains all available tables and fields. This file is created automatically, persisted 
+in JSON format and can be found here:
 
-### How is the data preparation started?
+**Only** Star Model:
+* [P8_capstone_documentation_data_dictionary_only_star_model.json](P8_capstone_documentation/project_data_dictionary/P8_capstone_documentation_data_dictionary_only_star_model.json)
 
-**Project has one script:**
+All available tables during ETL data pipeline creation process. Please note: only the Star Model elements are described. 
+* [P8_capstone_documentation_data_dictionary.json](P8_capstone_documentation/project_data_dictionary/P8_capstone_documentation_data_dictionary.json)
 
-* **P8_Capstone_Project_ETL_Processing_Data.py**: This ETL pipeline script uses data stored locally or in Amazon AWS S3 
-  (not part of this Project), processes and cleans data, and writes the processed data into parquet files.
+### What is part of the data preparation process (ETL)?
+
+**This Project has two scripts:**
+
+* **Script 1: P8_Capstone_Project_ETL_Processing_Data.py:**
+[P8_Capstone_Project_ETL_Processing_Data.py](P8_capstone_project/P8_Capstone_Project_ETL_Processing_Data.py) 
+
+* **Script 2: P8_Capstone_Project_ETL_Processing_Data.cfg** 
+[P8_Capstone_Project_ETL_Processing_Data.cfg](P8_capstone_project/P8_Capstone_Project_ETL_Processing_Data.cfg)
+
+Script 1 does all steps to build the final star data model.
+Script 2 is the configurations file for the Script 1.
+
 
 ### Prerequisites
 
@@ -122,7 +135,9 @@ Also, the following libraries are needed for the python environment to make Jupy
 * NOTE: in the beginning of the execution, script downloads saurfang:spark-sas7bdat package to enable Spark to process 
   SAS files.
 
-* _pandas_ to read some of the input files into a format that Spark can understand.
+* _pathlib_ to handle path's operations on the file system  
+* _json_ to persist a dataset in JSON format
+* _configparser_ to configure all parameters from *.cfg file
 
 ### Run ETL pipeline
 
@@ -130,27 +145,14 @@ Type to command line:
 
 `python3 P8_Capstone_Project_ETL_Processing_Data.py`
 
-* First, Script reads the configuration file ([P8_Capstone_Project_ETL_Processing_Data.cfg](./P8_capstone_project/P8_Capstone_Project_ETL_Processing_Data.cfg))
+* All the environment variables are configured in an array and then the Spark session is created. During this process, 
+  the configuration file is read ([P8_Capstone_Project_ETL_Processing_Data.cfg](./P8_capstone_project/P8_Capstone_Project_ETL_Processing_Data.cfg)) 
 * Source data is read from SAS-I94 files and written to parquet files.
-* Prepare staging table `st_i94_immigrations`
+* The project questions are called as by means of the parameters (`'pq1','pq2', 'pq3', 'pq4'`). Everything else is done 
+  by the underlying functions. Example: When a method is called to create a dimension that is not currently available, 
+  it is loaded. If there is nothing to load because it has not been created yet, it will be created.     
 
 
-----------------------------------------------
-TODO: ********************************
-
-TODO: DESCRIBE WHAT'S GOING ON WITHIN `P8_Capstone_Project_ETL_Processing_Data.py` SCRIPT !!!
------
-* First, ETL script reads in configuration settings (*.cfg). Script also re-orders I94 inout files to process them in right order (Jan => Dec).
-* ETL script takes input data (I94 data, I94 country data, I94 airport data, ISO-3166 country data, IATA airport data).
-* Raw input data is read into pandas dataframe, and from there to Spark dataframe and stored into parquet staging files.
-* Staging parquet files are read back to Spark dataframes and cleaned (when necessary) and some further data is extracted from the original data.
-* Each star schema table is processed in order: admissions => countries => airports => time => immigrations
-* Finally, data quality checks are run for each table to validate the output (key columns don't have nulls, each table has content). A summary of the quality check is provided and written in console.
-* During the execution, ETL script prints out information about the progress of the script execution.
-
-TODO: ********************************
-
-----------------------------------------------
 ### Project write-up
 * Outline of the steps taken in this project:
     * Project scope: Four project questions had to be answered.
@@ -170,19 +172,19 @@ TODO: ********************************
 * Used technologies and tools:
     * This project uses Python, Pandas, Jupyter Notebook and Apache Spark (PySpark) in local mode to process 2016 U.S. 
       immigration data.
-      There are 5 project questions to answer. The ETL pipeline described is always aligned with the questions to be
+      There are 4 project questions to answer. The ETL pipeline described is always aligned with the questions to be
       answered. The data model therefore evolves piece by piece to the final version. The specified tools were selected
       because, on the one hand, they are easily suitable for data analysis and preparation. If the requirements become
       larger and the amount of data increases, a switch to cloud technologies based on e.g. AWS is possible at any time.
-      However, this is not the scope of this project.
+      However, this is **not** the scope of this project.
 
 
 * A logical approach to this project under the following scenarios:
     * __Propose how often the data should be updated and why.__
-        * The ETL process should run on a monthly basis.. This decision was made due to the fact that SAS data is only provided
-          monthly.
+        * The ETL process should run on a monthly basis.. This decision was made due to the fact that SAS data is only 
+          provided monthly.
 
-    * _Write a description of how you would approach the problem differently under the following scenarios:_
+    * __Write a description of how you would approach the problem differently under the following scenarios:__
         * __The data was increased by 100x.__
             * Source data should be stored in Cloud storage like AWS S3
             * To process all data in parallel use clustered Spark nodes (AWS EMR)
@@ -202,6 +204,8 @@ TODO: ********************************
 
 ## Summary
 Project-Capstone provides tools to automatically process, clean, analyze US I94 Immigration data in a flexible way and
-help to answer questions like the five Project questions.
+help to answer questions like the four Project questions.
+
+
 
 
