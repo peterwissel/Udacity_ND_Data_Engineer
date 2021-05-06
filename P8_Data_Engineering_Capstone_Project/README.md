@@ -95,8 +95,6 @@ jupyter notebooks:
   ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_4.2_data_quality_checks.ipynb))
 * Step 4.3: Data dictionary 
   ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_4.3_data_dictionary.ipynb))
-* Step 5: Project Write Up 
-  ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_5.ipynb))
 
 
 ### Data Dictionary
@@ -206,6 +204,9 @@ Type to command line:
 Project-Capstone provides tools to automatically process, clean, analyze US I94 Immigration data in a flexible way and
 help to answer questions like the four Project questions.
 
+##### Hint: Call the script on a cluster with the given package:
+
+        !spark-submit --packages saurfang:spark-sas7bdat:2.1.0-s_2.11 script.py
 
 
 
