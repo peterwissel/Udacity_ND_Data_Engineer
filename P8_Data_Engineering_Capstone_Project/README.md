@@ -1,6 +1,6 @@
 # Project 08 - Data Engineering Capstone Project
 > by Peter Wissel
->> 2021-04-03
+>> 2021-05-05
 
 ## Introduction
 This project works on a data set for immigration to the United States. The supplementary datasets will include data on 
@@ -45,15 +45,15 @@ The project works primarily with a dataset based on immigration data (I94) to th
 
 ###### 5. [I94_SAS_Labels_I94ADDR.txt.I94ADDR](P8_capstone_resource_files/I94_sas_labels_descriptions_extracted_data/I94_SAS_Labels_I94ADDR.txt):
 - `I94ADDR` State description has errors like 'WI'='WISCONS**O**N' instead of 'WI'='WISCONS**I**N'. **Project decision:**
-The only incorrect US state will be corrected manually.
+The only incorrect US state will be corrected **manually**.
 
 
 # Data Model and ETL Pipeline
 ### Conceptual Data Model
 The following data model is based on the four main questions to be answered. For this reason, I decided to select only
 the fields from the source data that provide the correct answers. After the data has been read in and written to the
-staging tables for transformation, a star data model will be created for data analysis. Note: This project is not large enough
-to store the data in a core data warehouse (3NR) as a preliminary stage.
+staging tables for transformation, a star data model will be created for data analysis. Note: This project is not large 
+enough to store the data in a core data warehouse (3NR) as a preliminary stage.
 
 ![I94-Data ER-Model](P8_capstone_documentation/05_P8_I94-Data_Staging_Tables.png)
 ![I94-Data Staging Tables](P8_capstone_documentation/06_P8_I94-Data_Model.png)
@@ -74,8 +74,30 @@ same way like in this scenario:
 1. Mapping of dimension `d_<dimension_table>` to  fact table `f_<fact_table_name>` 
 1. Answer Project Question
 
-This procedure is explained in more detail in the data preparation file 
-([P8_Capstone_Project_Data_Preparation.ipynb](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_All.ipynb))
+**P8 Data Preparation:** This procedure is explained in more detail in the following data preparation Steps based on 
+jupyter notebooks:
+
+* Step 1 and 2: Project Overview, Scope and Gathering of Data 
+  ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_1_and_2.ipynb))
+* Step 3.0 and 4.0: Data Model definition and ETL steps 
+  ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_3.0_and_4.0.ipynb))
+* Step 3.1.1 and 4.1.1: Project Question 1 (PQ1) - From which country do immigrants come to the U.S. and how many? 
+  ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_3.1.1_and_4.1.1.ipynb))
+* Step 3.1.2 and 4.1.2: Project Question 2 (PQ2) - At what airports do foreign persons arrive for immigration to the U.S.? 
+  ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_3.1.2_and_4.1.2.ipynb))
+* Step 3.1.3 and 4.1.3: Project Question 3 (PQ3) - At what times do foreign persons arrive for immigration to the U.S.? 
+  ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_3.1.3_and_4.1.3.ipynb))
+* Step 3.1.4 and 4.1.4: Project Question 4 (PQ4) - To which states in the U.S. do immigrants want to continue their travel after their initial 
+  arrival and what demographics can immigrants expect when they arrive in the destination state, such as average 
+  temperature, population numbers or population density? 
+  ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_3.1.4_and_4.1.4.ipynb))
+* Step 4.2: Data quality checks 
+  ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_4.2_data_quality_checks.ipynb))
+* Step 4.3: Data dictionary 
+  ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_4.3_data_dictionary.ipynb))
+* Step 5: Project Write Up 
+  ([Link](P8_capstone_project/P8_Capstone_Project_Data_Preparation_Step_5.ipynb))
+
 
 ### Data Dictionary
 A data dictionary describes and explains all available tables and fields. This file can be found here:
