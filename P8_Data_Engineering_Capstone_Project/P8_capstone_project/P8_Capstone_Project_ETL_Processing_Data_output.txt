@@ -302,7 +302,7 @@ Dataframe d_date_arrivals loaded from already existing im memory dict 'staging_t
 Dataframe st_date_departures loaded from already existing im memory dict 'staging_tables_available'.
 Dataframe d_date_departures loaded from already existing im memory dict 'staging_tables_available'.
 
-Data Dictionary created. File is located at: ../P8_capstone_documentation/10_P8_capstone_documentation_data_dictionary.json
+Data Dictionary created. File is located at: ../P8_capstone_documentation/project_data_dictionary/P8_capstone_documentation_data_dictionary.json
 
 --------------------------------------
 Method: P8_Capstone_Project_Data_Preparation.py/main()

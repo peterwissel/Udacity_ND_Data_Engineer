@@ -287,7 +287,7 @@ def get_dataframe(spark_session, environment_variables, data_table_available, da
     # If dataframe is already available, get it from dict 'staging_tables_available'
     if data_table_available.get(staging_table_to_load_name):
         dataframe_loaded = data_table_available.get(staging_table_to_load_name)
-        print(f"Dataframe {staging_table_to_load_name} loaded from already existing im memory dict "
+        print(f"Dataframe {staging_table_to_load_name} loaded from already existing in memory dict "
               f"'staging_tables_available'.")
     else:
         # Dataframe does not exist? Load it!
