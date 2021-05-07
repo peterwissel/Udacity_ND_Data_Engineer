@@ -18,7 +18,7 @@ airport codes, U.S. city demographics, and temperature data.
 The project works primarily with a dataset based on immigration data (I94) to the United States.
 
 - Gathering Data (given data sets):
-    1. [Immigration data '18-83510-I94-Data-2016' to the U.S.](https://www.trade.gov/)
+    1. [Immigration data '18-83510-I94-Data-2016' to the U.S.](https://travel.trade.gov/research/programs/i94/description.asp)
     2. [airport-codes_csv.csv: Airports around the world](https://datahub.io/core/airport-codes#data)
     3. [us-cities-demographics.csv: US cities and it's information about citizens](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/)
     4. [GlobalLandTemperaturesByCity.csv: Temperature grouped by City and Country](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data)
