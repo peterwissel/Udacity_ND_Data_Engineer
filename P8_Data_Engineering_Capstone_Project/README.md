@@ -18,7 +18,7 @@ airport codes, U.S. city demographics, and temperature data.
 The project works primarily with a dataset based on immigration data (I94) to the United States.
 
 - Gathering Data (given data sets):
-    1. [Immigration data '18-83510-I94-Data-2016' to the U.S.](https://travel.trade.gov/research/programs/i94/description.asp)
+    1. [Immigration data '18-83510-I94-Data-2016' to the U.S.](https://www.trade.gov/)
     2. [airport-codes_csv.csv: Airports around the world](https://datahub.io/core/airport-codes#data)
     3. [us-cities-demographics.csv: US cities and it's information about citizens](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/)
     4. [GlobalLandTemperaturesByCity.csv: Temperature grouped by City and Country](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data)
@@ -48,6 +48,8 @@ The project works primarily with a dataset based on immigration data (I94) to th
 - `I94ADDR` State description has errors like 'WI'='WISCONS**O**N' instead of 'WI'='WISCONS**I**N'. **Project decision:**
 The only incorrect US state will be corrected **manually**.
 
+**All source files are located in the `P8_capstone_resource_files`** folder. If there are files with `*.7z` file extension,
+  please unzip them with 7Zip first. Otherwise you will not be able to access them.
 
 # Data Model and ETL Pipeline
 ### Conceptual Data Model
@@ -75,7 +77,7 @@ same way like in this scenario:
 1. Mapping of dimension `d_<dimension_table>` to  fact table `f_<fact_table_name>` 
 1. Answer Project Question
 
-**P8 Data Preparation:** This procedure is explained in more detail in the following data preparation Steps based on 
+**Data Preparation:** This procedure is explained in more detail in the following data preparation Steps based on 
 jupyter notebooks:
 
 * Step 1 and 2: Project Overview, Scope and Gathering of Data 
@@ -105,7 +107,8 @@ in JSON format and can be found here:
 **Only** Star Model:
 * [P8_capstone_documentation_data_dictionary_only_star_model.json](P8_capstone_documentation/project_data_dictionary/P8_capstone_documentation_data_dictionary_only_star_model.json)
 
-All available tables during ETL data pipeline creation process. Please note: only the Star Model elements are described. 
+All available tables during ETL data pipeline creation process. _Please note: only the Star Model elements are described.
+Staging tables doesn't have any descriptions._  
 * [P8_capstone_documentation_data_dictionary.json](P8_capstone_documentation/project_data_dictionary/P8_capstone_documentation_data_dictionary.json)
 
 ### What is part of the data preparation process (ETL)?
@@ -131,7 +134,7 @@ Also, the following libraries are needed for the python environment to make Jupy
 
 * _pyspark_ (+ dependencies) to enable script to create a SparkSession. (See 
   [https://spark.apache.org/docs/latest/api/python/index.html](https://spark.apache.org/docs/latest/api/python/index.html))
-* NOTE: in the beginning of the execution, script downloads saurfang:spark-sas7bdat package to enable Spark to process 
+* NOTE: in the beginning of the execution, script downloads `saurfang:spark-sas7bdat` package to enable Spark to process 
   SAS files.
 
 * _pathlib_ to handle path's operations on the file system  
@@ -157,8 +160,8 @@ Type to command line:
     * Project scope: Four project questions had to be answered.
     * The four given data sets from different areas were examined and aligned with the project questions. Based on these 
       questions, the data model was built step by step.
-    * Examination of the data provided important insights. Pandas were used to take a quick look at small data sets to 
-      gain these insights.
+    * Examination of the data provided important insights. Pandas were used in Jupyter notebook to take a quick look at 
+      small data sets to gain these insights.
     * Transformation of the data within the ETL (Extract, Transform, Load) pipeline to build the star schema data model.
     * Automatically creation of a data dictionary. The only manual part was to fill the table and column descriptions.
 
@@ -194,7 +197,7 @@ Type to command line:
         * __The data populates a dashboard that must be updated on a daily basis by 7am every day.__
             * The I94 source data should be read in daily. This will reduce the amount of data per run. Note that not 
               every project dataset (e.g. US Cities Demographics or Airport Codes) needs to be loaded daily.
-            * Apache Airflow could be used for the daily data loading procedure
+            * Apache Airflow could be used for the daily data loading procedure as the scheduling service
     
         * __The database needed to be accessed by 100+ people.__
             * Output data should be stored in a cloud DWH such as AWS Redshift to be "always available".  In addition, 
